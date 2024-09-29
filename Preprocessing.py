@@ -68,5 +68,19 @@ class Preprocessing():
 
                 tokenized_text_no_punctuation.append(tokenized_text[i])
 
+        letters_list = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z','á','é','í','ó','ú']
+
+        for i in range(len(tokenized_text_no_punctuation)):
+
+            clean_token = ""
+            for character in tokenized_text_no_punctuation[i]:
+
+                if(character in letters_list):
+
+                    clean_token = clean_token + character
+
+            tokenized_text_no_punctuation[i] = clean_token
+
+
         return tokenized_text_no_punctuation
 
